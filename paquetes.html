@@ -60,20 +60,20 @@
         <option value="1000000">Hasta $1.000.000</option>
       </select>
     </div>
-    <div class="filtro-group">
-      <label>Incluye</label>
-      <select id="f-incluye" onchange="filtrar()">
-        <option value="">Cualquiera</option>
-        <option value="vuelo_internacional">Vuelo internacional</option>
-        <option value="hotel">Hotel</option>
-        <option value="desayuno">Desayuno</option>
-        <option value="all_inclusive">All inclusive</option>
-        <option value="excursiones">Excursiones</option>
-        <option value="seguro_viaje">Seguro de viaje</option>
-        <option value="traslado_aeropuerto">Traslados</option>
-      </select>
+    <button class="filtro-reset" onclick="resetFiltros()">✕ Limpiar filtros</button>
+  </div>
+
+  <div class="filtros-chips-wrap">
+    <span class="filtros-chips-label">Incluye</span>
+    <div class="filtros-chips" id="f-incluye-chips">
+      <button type="button" class="chip" data-value="vuelo_internacional" onclick="toggleIncluye(this)">Vuelo internacional</button>
+      <button type="button" class="chip" data-value="hotel" onclick="toggleIncluye(this)">Hotel</button>
+      <button type="button" class="chip" data-value="desayuno" onclick="toggleIncluye(this)">Desayuno</button>
+      <button type="button" class="chip" data-value="all_inclusive" onclick="toggleIncluye(this)">All inclusive</button>
+      <button type="button" class="chip" data-value="excursiones" onclick="toggleIncluye(this)">Excursiones</button>
+      <button type="button" class="chip" data-value="seguro_viaje" onclick="toggleIncluye(this)">Seguro de viaje</button>
+      <button type="button" class="chip" data-value="traslado_aeropuerto" onclick="toggleIncluye(this)">Traslados</button>
     </div>
-    <button class="filtro-reset" onclick="resetFiltros()">✕ Limpiar</button>
   </div>
 
   <p class="filtros-resultado" id="filtros-resultado"></p>
@@ -96,10 +96,19 @@
     filtrar();
   }
 
+  function getIncluyeSeleccionados() {
+    return [...document.querySelectorAll('#f-incluye-chips .chip.active')].map(c => c.dataset.value);
+  }
+
+  function toggleIncluye(btn) {
+    btn.classList.toggle('active');
+    filtrar();
+  }
+
   function filtrar() {
     const cat = document.getElementById('f-categoria').value;
     const precioMax = document.getElementById('f-precio').value;
-    const incluye = document.getElementById('f-incluye').value;
+    const incluyeSel = getIncluyeSeleccionados();
 
     let resultado = todosPaquetes.filter(b => {
       if (cat && b.categoria !== cat) return false;
@@ -107,7 +116,8 @@
         const precio = parseInt((b.precio || '0').replace(/\./g, ''));
         if (precio > parseInt(precioMax)) return false;
       }
-      if (incluye && !(b.incluye || []).includes(incluye)) return false;
+      const inc = b.incluye || [];
+      if (incluyeSel.length && !incluyeSel.every(id => inc.includes(id))) return false;
       return true;
     });
 
@@ -127,7 +137,7 @@
   function resetFiltros() {
     document.getElementById('f-categoria').value = '';
     document.getElementById('f-precio').value = '';
-    document.getElementById('f-incluye').value = '';
+    document.querySelectorAll('#f-incluye-chips .chip.active').forEach(c => c.classList.remove('active'));
     filtrar();
   }
 
