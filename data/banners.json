@@ -1,0 +1,295 @@
+{
+  "home": {
+    "slider": ["home_1", "home_2", "home_3"],
+    "banners": ["paq_1", "paq_2", "paq_3"]
+  },
+  "paquetes": [
+    {
+      "id": "home_1",
+      "titulo": "Bariloche Mágico",
+      "destino": "Patagonia Argentina",
+      "precio": "185.000",
+      "moneda": "ARS",
+      "descripcion_corta": "7 noches con desayuno en hotel boutique con vista al lago Nahuel Huapi. Excursiones incluidas.",
+      "descripcion_larga": "Descubrí la magia de la Patagonia argentina en uno de los destinos más soñados del país. Este paquete incluye 7 noches de alojamiento en un exclusivo hotel boutique ubicado a orillas del lago Nahuel Huapi, con vistas panorámicas que te van a dejar sin palabras.\n\nEl desayuno está incluido todos los días, y el paquete incorpora las excursiones más emblemáticas de la región: Circuito Chico, Cerro Campanario, navegación al Bosque de Arrayanes y visita al Cerro Catedral.\n\nIdeal para parejas, familias y viajeros solos que buscan naturaleza, aventura y descanso en un entorno único. El hotel cuenta con spa, restaurante gourmet y personal disponible las 24hs.",
+      "duracion": "7 noches",
+      "categoria": "montana",
+      "fecha_salida": "Salidas todos los viernes",
+      "cupos": "12",
+      "incluye": ["vuelo_cabotaje", "traslado_aeropuerto", "hotel", "desayuno", "excursiones", "guia_espanol", "asistencia_24hs"],
+      "no_incluye": ["vuelo_internacional", "pension_completa", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Llegada a Bariloche", "descripcion": "Recepción en el aeropuerto y traslado al hotel. Check-in y tarde libre para recorrer el centro cívico y la costanera del lago."},
+        {"titulo": "Circuito Chico", "descripcion": "Excursión guiada por el famoso Circuito Chico: Cerro Campanario, Punto Panorámico, Llao Llao y la capilla San Eduardo."},
+        {"titulo": "Cerro Catedral", "descripcion": "Día completo en el Cerro Catedral, el mayor centro de esquí de Sudamérica. Incluye telesilla y equipo (en temporada)."},
+        {"titulo": "Bosque de Arrayanes", "descripcion": "Navegación por el lago Nahuel Huapi hasta la Isla Victoria y el Bosque de Arrayanes, declarado patrimonio natural."},
+        {"titulo": "Día libre", "descripcion": "Jornada a elección: chocolaterías, cervecerías artesanales, kayak en el lago o tirolesa en el bosque."},
+        {"titulo": "Villa La Angostura", "descripcion": "Excursión opcional a Villa La Angostura y los Siete Lagos, uno de los paisajes más impresionantes de la Patagonia."},
+        {"titulo": "Regreso", "descripcion": "Desayuno, checkout y traslado al aeropuerto para el vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1531761535209-180857e963b9?w=800&q=80",
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+      ],
+      "color": "#1a3a4a",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "home_2",
+      "titulo": "Cancún Todo Incluido",
+      "destino": "México",
+      "precio": "320.000",
+      "moneda": "ARS",
+      "descripcion_corta": "10 noches en resort 5 estrellas frente al mar Caribe. Comidas y bebidas ilimitadas.",
+      "descripcion_larga": "Viví la experiencia del Caribe mexicano en su máxima expresión. Te espera un complejo todo incluido de 5 estrellas con playas de arena blanca y aguas cristalinas turquesas que no te van a dejar nada que desear.\n\nEl paquete incluye 10 noches en habitación superior con vista al jardín, todas las comidas en los restaurantes temáticos del complejo, bebidas nacionales e internacionales ilimitadas, acceso a piscinas temáticas, actividades deportivas acuáticas no motorizadas y shows nocturnos.\n\nAdemás podés sumar excursiones a Chichén Itzá, Xcaret, Xel-Há o Tulum a precios especiales. El vuelo directo desde Buenos Aires sale todos los sábados.",
+      "duracion": "10 noches",
+      "categoria": "playa",
+      "fecha_salida": "Salidas todos los sábados",
+      "cupos": "20",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "hotel", "pension_completa", "all_inclusive", "excursiones", "seguro_viaje", "asistencia_24hs"],
+      "no_incluye": ["gestion_visa", "documentacion"],
+      "itinerario": [
+        {"titulo": "Llegada a Cancún", "descripcion": "Vuelo directo desde Buenos Aires. Recepción y traslado al resort. Check-in y primer contacto con el Caribe."},
+        {"titulo": "Día de playa", "descripcion": "Jornada completa de relax en la playa privada del resort. Deportes acuáticos no motorizados incluidos."},
+        {"titulo": "Xcaret", "descripcion": "Excursión opcional al parque Xcaret: ríos subterráneos, arrecife de coral, show nocturno México Espectacular."},
+        {"titulo": "Chichén Itzá", "descripcion": "Visita guiada a la pirámide de Kukulcán, una de las nuevas 7 maravillas del mundo. Cenote incluido."},
+        {"titulo": "Tulum", "descripcion": "Excursión a las ruinas mayas de Tulum frente al mar Caribe y baño en cenote natural."},
+        {"titulo": "Días libres", "descripcion": "Tiempo para disfrutar del resort, spa, restaurantes temáticos y entretenimiento nocturno."},
+        {"titulo": "Regreso", "descripcion": "Check-out, traslado al aeropuerto y vuelo de regreso a Buenos Aires."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1510097467424-192d713fd8b2?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=800&q=80",
+        "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=800&q=80",
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
+      ],
+      "color": "#1a4a3a",
+      "emoji": "🌊"
+    },
+    {
+      "id": "home_3",
+      "titulo": "Torres del Paine",
+      "destino": "Patagonia Chilena",
+      "precio": "420.000",
+      "moneda": "ARS",
+      "descripcion_corta": "8 días de trekking guiado en el parque más impresionante del mundo. Todo el equipo incluido.",
+      "descripcion_larga": "Torres del Paine es considerado uno de los parques nacionales más bellos del planeta, y este paquete te lleva al corazón de la Patagonia chilena de la manera más completa posible.\n\nEl circuito incluye 8 días de trekking guiado por las icónicas rutas W y parte del Circuito Grande, con guías certificados bilingües que conocen cada sendero del parque. El alojamiento alterna entre refugios de montaña con comodidades básicas y campamentos con equipamiento completo.\n\nCarpa, bolsa de dormir, colchoneta, bastones y mochila de trekking están incluidos. Las comidas durante toda la expedición también forman parte del paquete. Grupos de máximo 8 personas para una experiencia más íntima.",
+      "duracion": "8 días",
+      "categoria": "aventura",
+      "fecha_salida": "Noviembre a Marzo",
+      "cupos": "8",
+      "incluye": ["vuelo_cabotaje", "traslado_aeropuerto", "transporte_ciudades", "hotel", "pension_completa", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["vuelo_internacional", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Puerto Natales", "descripcion": "Llegada a Punta Arenas, traslado a Puerto Natales. Check-in en hostería, reunión de briefing y preparación del equipo."},
+        {"titulo": "Ingreso al Parque", "descripcion": "Transfer a Torres del Paine. Trekking hasta el campamento Paine Grande (4hs). Primer contacto con la majestuosidad del parque."},
+        {"titulo": "Glaciar Grey", "descripcion": "Trekking al Glaciar Grey (6hs). Vista impresionante del glaciar de 270km² y las montañas nevadas del fondo."},
+        {"titulo": "Valle del Francés", "descripcion": "Jornada de trekking por el Valle del Francés (8hs). Cascadas, cóndores y vistas 360° desde el mirador Britannico."},
+        {"titulo": "Las Torres", "descripcion": "El gran día: ascenso a la base de las Torres del Paine al amanecer (10hs). La foto más icónica de la Patagonia."},
+        {"titulo": "Lago Nordenskjöld", "descripcion": "Trekking por las orillas del lago Nordenskjöld con vistas panorámicas a los Cuernos del Paine."},
+        {"titulo": "Día de descanso", "descripcion": "Jornada optativa: navegación por el lago Grey para acercarse al glaciar en lancha."},
+        {"titulo": "Regreso", "descripcion": "Transfer a Puerto Natales y Punta Arenas. Vuelo de regreso a Buenos Aires."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?w=800&q=80",
+        "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&q=80"
+      ],
+      "color": "#2a1a3a",
+      "emoji": "🌿"
+    },
+    {
+      "id": "paq_1",
+      "titulo": "Cataratas del Iguazú",
+      "destino": "Misiones, Argentina",
+      "precio": "98.000",
+      "moneda": "ARS",
+      "descripcion_corta": "4 noches para vivir uno de los paisajes más espectaculares del planeta. Ambos lados incluidos.",
+      "descripcion_larga": "Las Cataratas del Iguazú son una de las maravillas naturales más impresionantes del mundo y este paquete te permite vivirlas en su totalidad: lado argentino, lado brasileño y todo lo que hay entre medio.\n\nEl alojamiento durante 4 noches es en un hotel 4 estrellas ubicado en Puerto Iguazú, con desayuno incluido todos los días. Las excursiones contemplan el recorrido completo por los circuitos superior e inferior del lado argentino, la visita obligada a la Garganta del Diablo, y una jornada completa en el lado brasileño con panorámica inigualable de todo el sistema de cascadas.\n\nEl paquete también incluye una navegación en lancha a los pies de las cataratas para los aventureros, y el transfer entre el hotel y el parque en ambas jornadas.",
+      "duracion": "4 noches",
+      "categoria": "aventura",
+      "fecha_salida": "Salidas todos los jueves",
+      "cupos": "16",
+      "incluye": ["vuelo_cabotaje", "traslado_aeropuerto", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs"],
+      "no_incluye": ["vuelo_internacional", "media_pension", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Llegada a Iguazú", "descripcion": "Vuelo desde Buenos Aires. Transfer al hotel, check-in y tarde libre para conocer Puerto Iguazú."},
+        {"titulo": "Lado Argentino", "descripcion": "Jornada completa en el Parque Nacional Iguazú: circuito superior, inferior y tren ecológico a la Garganta del Diablo."},
+        {"titulo": "Lado Brasileño", "descripcion": "Cruce a Brasil y recorrido por el Parque Nacional do Iguaçu con la mejor vista panorámica de las cataratas."},
+        {"titulo": "Día libre y regreso", "descripcion": "Mañana libre para compras o actividades optativas. Transfer al aeropuerto y vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1584555684040-bad07f46a21f?w=800&q=80",
+        "https://images.unsplash.com/photo-1601039641847-7857b994d704?w=800&q=80"
+      ],
+      "color": "#1a4a2a",
+      "emoji": "💧"
+    },
+    {
+      "id": "paq_2",
+      "titulo": "Roma, Florencia y Venecia",
+      "destino": "Italia",
+      "precio": "1.250.000",
+      "moneda": "ARS",
+      "descripcion_corta": "14 noches recorriendo lo mejor de Italia con guía en español incluido en cada ciudad.",
+      "descripcion_larga": "Italia es uno de esos destinos que hay que vivir al menos una vez en la vida, y este circuito combina la grandeza eterna de Roma con la serenidad incomparable de la Toscana y la magia flotante de Venecia.\n\nEl viaje comienza con 6 noches en Roma: Coliseo, Vaticano, Fontana di Trevi, Foro Romano y los mercados históricos del centro. Un tren de alta velocidad te lleva luego a Florencia para 5 noches: Galería Uffizi, Catedral de Santa Maria del Fiore y excursiones de día a Siena, San Gimignano y los viñedos del Chianti.\n\nLos últimos 3 días son en Venecia: paseo en góndola por los canales, Plaza San Marco, Palacio Ducal y excursiones a las islas de Murano y Burano. Guía de habla hispana incluida en todas las ciudades.",
+      "duracion": "14 noches",
+      "categoria": "cultural",
+      "fecha_salida": "Salidas los martes",
+      "cupos": "18",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["media_pension", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Roma", "descripcion": "Vuelo internacional nocturno desde Ezeiza."},
+        {"titulo": "Roma — llegada", "descripcion": "Recepción en el aeropuerto Fiumicino, traslado al hotel en el centro histórico y primer recorrido por los alrededores."},
+        {"titulo": "Roma clásica", "descripcion": "Tour guiado por el Coliseo, Foro Romano y Palatino. Tarde libre en el centro."},
+        {"titulo": "Vaticano", "descripcion": "Visita a los Museos Vaticanos, Capilla Sixtina y Basílica de San Pedro con acceso prioritario."},
+        {"titulo": "Roma libre", "descripcion": "Fontana di Trevi, Panteón, Plaza Navona y mercados históricos. Tarde libre para shopping."},
+        {"titulo": "Roma → Florencia", "descripcion": "Tren de alta velocidad. Check-in y primer paseo por el centro histórico de Florencia."},
+        {"titulo": "Florencia", "descripcion": "Galería Uffizi, Catedral del Duomo, Baptisterio y Campanile. Vista desde la Piazzale Michelangelo."},
+        {"titulo": "Toscana", "descripcion": "Excursión a Siena, San Gimignano y viñedos del Chianti con degustación de vinos."},
+        {"titulo": "Florencia libre", "descripcion": "Jornada libre para museos, shopping en el Mercato Centrale o excursión opcional a Pisa."},
+        {"titulo": "Florencia → Venecia", "descripcion": "Tren a Venecia. Llegada y primer paseo por los canales."},
+        {"titulo": "Venecia", "descripcion": "Tour guiado por Plaza San Marco, Palacio Ducal, Puente de los Suspiros y paseo en góndola."},
+        {"titulo": "Murano y Burano", "descripcion": "Excursión en vaporetto a las islas de Murano (vidrio soplado) y Burano (casas de colores)."},
+        {"titulo": "Venecia libre", "descripcion": "Última jornada para recorrer los canales secundarios y el mercado de Rialto."},
+        {"titulo": "Regreso", "descripcion": "Transfer al aeropuerto Marco Polo y vuelo de regreso a Buenos Aires."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&q=80",
+        "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&q=80",
+        "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=800&q=80"
+      ],
+      "color": "#4a2a1a",
+      "emoji": "🏛️"
+    },
+    {
+      "id": "paq_3",
+      "titulo": "Machu Picchu Express",
+      "destino": "Perú",
+      "precio": "275.000",
+      "moneda": "ARS",
+      "descripcion_corta": "7 días por el Valle Sagrado y la ciudadela inca más impresionante del mundo.",
+      "descripcion_larga": "Machu Picchu es el destino más icónico de América del Sur, y este paquete te lleva hasta la ciudadela inca de la manera más completa y cómoda posible.\n\nEl itinerario comienza en Cusco, donde pasás 2 noches para aclimatarte a la altura (3.400 msnm) y recorrer la ciudad colonial y sus alrededores: Sacsayhuamán, Qorikancha y el Mercado de San Pedro. Luego, 2 días recorriendo el Valle Sagrado de los Incas: Pisac, Ollantaytambo y los mercados artesanales locales.\n\nEl punto culminante es el viaje en el tren Vistadome hasta Aguas Calientes, con vistas panorámicas impresionantes de la selva y los Andes. El día de Machu Picchu incluye entrada, visita guiada de 3 horas y tiempo libre. El paquete cierra con el regreso a Lima y el vuelo a Buenos Aires.",
+      "duracion": "7 días",
+      "categoria": "cultural",
+      "fecha_salida": "Salidas los lunes",
+      "cupos": "14",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs"],
+      "no_incluye": ["media_pension", "all_inclusive", "gestion_visa", "documentacion"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Lima → Cusco", "descripcion": "Vuelo internacional con conexión en Lima. Llegada a Cusco y traslado al hotel. Tarde de aclimatación."},
+        {"titulo": "Cusco colonial", "descripcion": "Tour guiado por Sacsayhuamán, Qorikancha, catedral y Plaza de Armas. Mercado de San Pedro."},
+        {"titulo": "Valle Sagrado", "descripcion": "Excursión al Valle Sagrado: ruinas de Pisac, mercado artesanal y Ollantaytambo."},
+        {"titulo": "Tren a Aguas Calientes", "descripcion": "Viaje en tren Vistadome por la selva hasta Aguas Calientes. Check-in y recorrido del pueblo."},
+        {"titulo": "Machu Picchu", "descripcion": "Bus al amanecer hasta la ciudadela. Visita guiada de 3 horas y tiempo libre. Regreso en tarde."},
+        {"titulo": "Regreso a Lima", "descripcion": "Tren de regreso y vuelo nocturno Lima → Buenos Aires."},
+        {"titulo": "Llegada a Buenos Aires", "descripcion": "Arribo a Ezeiza en la mañana."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80",
+        "https://images.unsplash.com/photo-1569877854710-5dce0e2f0cbe?w=800&q=80",
+        "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80"
+      ],
+      "color": "#3a3a1a",
+      "emoji": "🗿"
+    },
+    {
+      "id": "home_b1",
+      "titulo": "Salta y la Quebrada",
+      "destino": "Noroeste Argentino",
+      "precio": "95.000",
+      "moneda": "ARS",
+      "descripcion_corta": "5 noches descubriendo quebradas, pueblos andinos y la mejor gastronomía del norte argentino.",
+      "descripcion_larga": "El noroeste argentino es uno de los destinos más sorprendentes del país, con paisajes que van desde los valles coloridos de la Quebrada de Humahuaca hasta las salinas más grandes del mundo.\n\nEste paquete de 5 noches tiene base en Salta, declarada 'La linda' por su arquitectura colonial impecable y su gastronomía única. Desde ahí se realizan excursiones a los destinos más emblemáticos: la Quebrada de Humahuaca (Patrimonio de la Humanidad), Purmamarca y el Cerro de los 7 Colores, Cachi y el Valle Calchaquí, y las Salinas Grandes a 4.170 metros sobre el nivel del mar.\n\nTraslados y guía incluidos en todas las excursiones. El hotel en Salta es de 4 estrellas en el casco histórico.",
+      "duracion": "5 noches",
+      "categoria": "cultural",
+      "fecha_salida": "Salidas todos los miércoles",
+      "cupos": "15",
+      "incluye": ["vuelo_cabotaje", "traslado_aeropuerto", "hotel", "desayuno", "excursiones", "guia_espanol", "asistencia_24hs"],
+      "no_incluye": ["vuelo_internacional", "media_pension", "all_inclusive", "seguro_viaje", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Llegada a Salta", "descripcion": "Vuelo desde Buenos Aires. Transfer al hotel en el centro histórico. Tarde libre para recorrer la Plaza 9 de Julio."},
+        {"titulo": "Quebrada de Humahuaca", "descripcion": "Excursión de día completo: Tilcara, Purmamarca y el Cerro de los 7 Colores. Patrimonio de la Humanidad UNESCO."},
+        {"titulo": "Salinas Grandes", "descripcion": "Visita a las Salinas Grandes a 4.170m de altura con su espejo infinito de sal blanca."},
+        {"titulo": "Cachi y Valle Calchaquí", "descripcion": "Ruta de los Valles Calchaquíes: Cachi, Payogasta y las bodegas de altura de Cafayate."},
+        {"titulo": "Salta libre y regreso", "descripcion": "Mañana libre para el MAAM o compras. Transfer al aeropuerto y vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1596451190630-186aff535bf2?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1531761535209-180857e963b9?w=800&q=80",
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"
+      ],
+      "color": "#4a3a1a",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "home_b2",
+      "titulo": "Ushuaia Fin del Mundo",
+      "destino": "Tierra del Fuego",
+      "precio": "210.000",
+      "moneda": "ARS",
+      "descripcion_corta": "6 noches en el confín del mundo. Parque Nacional y navegación por el Canal Beagle incluidos.",
+      "descripcion_larga": "Ushuaia es la ciudad más austral del mundo y uno de los destinos más únicos de Argentina. Rodeada de montañas nevadas, el canal Beagle y bosques de lengas que en otoño se tiñen de rojo y naranja, es un paisaje de otro planeta.\n\nEl paquete incluye 6 noches en un hotel 4 estrellas con vista al canal, desayuno incluido todos los días y las excursiones más icónicas de la región: navegación por el Canal Beagle con visita a la Isla de los Lobos y las Pingüineras, trekking en el Parque Nacional Tierra del Fuego y el tren del fin del mundo.\n\nOpcional: excursión a la Isla Martillo para caminar entre pingüinos magallánicos y de vincha (solo en temporada).",
+      "duracion": "6 noches",
+      "categoria": "aventura",
+      "fecha_salida": "Todo el año",
+      "cupos": "12",
+      "incluye": ["vuelo_cabotaje", "traslado_aeropuerto", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs"],
+      "no_incluye": ["vuelo_internacional", "pension_completa", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Llegada a Ushuaia", "descripcion": "Vuelo desde Buenos Aires. Transfer al hotel con vista al canal. Tarde libre para el centro y el Museo del Fin del Mundo."},
+        {"titulo": "Canal Beagle", "descripcion": "Navegación de 3 horas por el Canal Beagle: Isla de los Lobos, Isla de los Pájaros, Faro Les Éclaireurs."},
+        {"titulo": "Parque Nacional", "descripcion": "Tren del Fin del Mundo y trekking por el Parque Nacional Tierra del Fuego hasta la Bahía Lapataia."},
+        {"titulo": "Lago Escondido", "descripcion": "Excursión por la Ruta 3: Valle de Tierra Mayor, Lago Escondido y Lago Fagnano."},
+        {"titulo": "Día libre", "descripcion": "Tiempo para tiendas de recuerdos, Ushuaia Golf Club (el más austral del mundo) o spa en el hotel."},
+        {"titulo": "Regreso", "descripcion": "Desayuno, checkout y transfer al aeropuerto para el vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1531761535209-180857e963b9?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
+        "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?w=800&q=80"
+      ],
+      "color": "#1a2a4a",
+      "emoji": "🐧"
+    },
+    {
+      "id": "home_b3",
+      "titulo": "París Romántico",
+      "destino": "Francia",
+      "precio": "980.000",
+      "moneda": "ARS",
+      "descripcion_corta": "8 noches en la ciudad del amor con hotel en el corazón de París y tours culturales incluidos.",
+      "descripcion_larga": "París es la ciudad más visitada del mundo y hay una razón para eso: la Torre Eiffel, el Louvre, Montmartre, los bulevares con sus cafés y la gastronomía más refinada de Europa hacen de esta experiencia algo único e irrepetible.\n\nEl paquete incluye 8 noches en un hotel 4 estrellas en el 8° arrondissement, a pasos de los Campos Elíseos y con fácil acceso en metro a todos los puntos de interés. El desayuno continental está incluido todos los días.\n\nLas excursiones guiadas cubren la Torre Eiffel con acceso prioritario, el Louvre y la Gioconda, Versalles y sus jardines, un crucero nocturno por el Sena y Montmartre con sus artistas callejeros. El guía de habla hispana está presente en todas las salidas.",
+      "duracion": "8 noches",
+      "categoria": "ciudad",
+      "fecha_salida": "Salidas los jueves",
+      "cupos": "20",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["media_pension", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → París", "descripcion": "Vuelo internacional nocturno. Llegada al aeropuerto Charles de Gaulle y traslado al hotel."},
+        {"titulo": "Torre Eiffel y Campos Elíseos", "descripcion": "Tour de bienvenida: Torre Eiffel con acceso prioritario al 2° piso, Champ de Mars y recorrido por los Campos Elíseos."},
+        {"titulo": "El Louvre", "descripcion": "Medio día en el museo más grande del mundo: la Gioconda, Venus de Milo, la Victoria de Samotracia."},
+        {"titulo": "Versalles", "descripcion": "Excursión de día completo al Palacio de Versalles y sus jardines geométricos."},
+        {"titulo": "Montmartre y Marais", "descripcion": "Mañana en Montmartre: Sacré-Cœur, artistas y vistas de París. Tarde en el barrio judío del Marais."},
+        {"titulo": "Crucero y museos", "descripcion": "Musée d'Orsay por la mañana. Crucero nocturno iluminado por el Sena."},
+        {"titulo": "Día libre", "descripcion": "Jornada libre para shopping en Galeries Lafayette, visita al Centre Pompidou o excursión opcional a Giverny."},
+        {"titulo": "Regreso", "descripcion": "Transfer al aeropuerto Charles de Gaulle y vuelo de regreso a Buenos Aires."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+        "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?w=800&q=80",
+        "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800&q=80"
+      ],
+      "color": "#2a1a4a",
+      "emoji": "🗼"
+    }
+  ]
+}

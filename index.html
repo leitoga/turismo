@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agencia de Viajes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo"><img src="img/logo.png" alt="Agencia de Viajes"/></a>
+  <nav class="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="paquetes.html">Paquetes</a>
+    <a href="admin.html" class="admin-link">⚙ Admin</a>
+  </nav>
+</header>
+
+<!-- SLIDER -->
+<section class="slider-section">
+  <div class="slider-track" id="slider-track"></div>
+  <button class="slider-btn slider-prev" onclick="moverSlider(-1)">&#8592;</button>
+  <button class="slider-btn slider-next" onclick="moverSlider(1)">&#8594;</button>
+  <div class="slider-dots" id="slider-dots"></div>
+</section>
+
+<!-- BANNERS FIJOS -->
+<section class="seccion" id="destinos">
+  <div class="seccion-header">
+    <span class="seccion-tag">✦ selección de temporada</span>
+    <h2 class="seccion-titulo">Destinos Destacados</h2>
+    <p class="seccion-desc">Los paquetes más elegidos del momento</p>
+  </div>
+  <div class="banners-grid" id="banners-grid"></div>
+  <div style="text-align:center; margin-top:3rem">
+    <a href="paquetes.html" class="btn-outline">Ver todos los paquetes →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo"><img src="img/logo.png" alt="Agencia de Viajes" style="height:50px"/></div>
+  <p class="footer-copy">© 2025 Agencia de Viajes — Todos los derechos reservados</p>
+</footer>
+
+<a href="https://wa.me/5491173743813?text=Hola%20Agencia de Viajes%20Viajes!%20Quisiera%20recibir%20información%20sobre%20sus%20paquetes%20turísticos." class="whatsapp-float" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.057 23.886l6.186-1.453A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.67.862.878-3.582-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+  WhatsApp
+</a>
+
+<script src="js/banners.js"></script>
+<script>
+  let sliderActivo = 0;
+  let sliderBanners = [];
+  let sliderTimer = null;
+
+  function bannerCardHTML(b) {
+    const hasImg = b.imagen && (b.imagen.startsWith('data:') || b.imagen.startsWith('http'));
+    return `
+      <div class="banner-bg" style="${hasImg ? `background-image:url('${b.imagen}')` : `background:${b.color}`}"></div>
+      ${!hasImg ? `<div class="banner-no-img">${b.emoji}</div>` : ''}
+      <div class="banner-overlay"></div>
+      <div class="banner-body">
+        ${b.categoria ? `<span class="banner-categoria">${b.categoria}</span>` : ''}
+        <span class="banner-destino">${b.destino}</span>
+        <h3 class="banner-titulo">${b.titulo}</h3>
+        <p class="banner-desc">${b.descripcion_corta}</p>
+        <div class="banner-footer">
+          <div class="banner-precio">
+            <span class="banner-desde">desde</span>
+            <span class="banner-monto">$${b.precio}</span>
+            <span class="banner-moneda">${b.moneda}</span>
+          </div>
+          <span class="banner-duracion">${b.duracion}</span>
+        </div>
+        <span class="banner-cta">Ver paquete completo →</span>
+      </div>
+    `;
+  }
+
+  function renderSlider(banners) {
+    sliderBanners = banners;
+    const track = document.getElementById('slider-track');
+    const dots = document.getElementById('slider-dots');
+    track.innerHTML = '';
+    dots.innerHTML = '';
+
+    banners.forEach((b, i) => {
+      const slide = document.createElement('a');
+      slide.className = 'slider-slide';
+      slide.href = `producto.html?id=${b.id}`;
+      slide.innerHTML = bannerCardHTML(b);
+      track.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = (e) => { e.preventDefault(); irASlide(i); reiniciarAutoplay(); };
+      dots.appendChild(dot);
+    });
+
+    irASlide(0);
+    iniciarAutoplay();
+  }
+
+  function irASlide(idx) {
+    sliderActivo = (idx + sliderBanners.length) % sliderBanners.length;
+    document.getElementById('slider-track').style.transform = `translateX(-${sliderActivo * 100}%)`;
+    document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === sliderActivo));
+  }
+
+  function moverSlider(dir) {
+    irASlide(sliderActivo + dir);
+    reiniciarAutoplay();
+  }
+
+  function iniciarAutoplay() {
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(() => irASlide(sliderActivo + 1), 5000);
+  }
+
+  function reiniciarAutoplay() {
+    clearInterval(sliderTimer);
+    iniciarAutoplay();
+  }
+
+  async function renderHome() {
+    const data = await cargarBanners();
+    const home = resolverHome(data);
+
+    renderSlider(home.slider);
+
+    const grid = document.getElementById('banners-grid');
+    grid.innerHTML = '';
+    home.banners.forEach(b => {
+      const card = document.createElement('a');
+      card.className = 'banner-card';
+      card.href = `producto.html?id=${b.id}`;
+      card.innerHTML = bannerCardHTML(b);
+      grid.appendChild(card);
+    });
+  }
+
+  renderHome();
+</script>
+</body>
+</html>
