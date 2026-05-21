@@ -52,6 +52,7 @@
   <div class="seccion-tabs">
     <button class="tab-btn active" id="tab-home" onclick="cambiarSeccion('home')">🏠 Home</button>
     <button class="tab-btn" id="tab-paquetes" onclick="cambiarSeccion('paquetes')">📦 Paquetes</button>
+    <button class="tab-btn" id="tab-items" onclick="cambiarSeccion('items')">🏷️ Ítems</button>
   </div>
 
   <div class="admin-body">
@@ -64,6 +65,20 @@
         <h2 class="panel-title">Home — Posiciones</h2>
         <p class="panel-sub">Elegí qué paquete aparece en cada lugar</p>
         <div id="home-asignaciones"></div>
+      </div>
+
+      <!-- PANEL ÍTEMS DE INCLUYE -->
+      <div class="panel" id="panel-items" style="display:none">
+        <h2 class="panel-title">Ítems de servicios</h2>
+        <p class="panel-sub">Estos son los ítems disponibles para cada paquete. Se usan tanto en <strong style="color:#999">✓ Qué incluye</strong> como en <strong style="color:#999">✗ Qué NO incluye</strong> — al editar un paquete podés tildar cada ítem en cualquiera de las dos listas. Los que estén en uso aparecen como filtro en la web.</p>
+
+        <div class="items-add-form">
+          <input type="text" id="f-nuevo-item" placeholder="Ej: Wi-Fi gratis en el hotel" maxlength="60" onkeydown="if(event.key==='Enter'){event.preventDefault();agregarItemIncluye();}"/>
+          <button class="btn btn-gold" onclick="agregarItemIncluye()">+ Agregar ítem</button>
+        </div>
+
+        <div id="items-lista" class="items-lista"></div>
+        <p class="items-empty" id="items-empty" style="display:none">No hay ítems cargados. Agregá el primero arriba.</p>
       </div>
 
       <!-- SELECTOR PAQUETES -->
@@ -324,19 +339,25 @@ function cambiarSeccion(sec) {
   seccionActiva = sec;
   document.getElementById('tab-home').classList.toggle('active', sec === 'home');
   document.getElementById('tab-paquetes').classList.toggle('active', sec === 'paquetes');
+  document.getElementById('tab-items').classList.toggle('active', sec === 'items');
 
   // Home: mostrar asignaciones, ocultar selector de edición
   document.getElementById('panel-home-asignacion').style.display = sec === 'home' ? 'block' : 'none';
+  document.getElementById('panel-items').style.display = sec === 'items' ? 'block' : 'none';
   document.getElementById('panel-selector').style.display = sec === 'paquetes' ? 'block' : 'none';
   document.getElementById('btn-nuevo-wrap').style.display = sec === 'paquetes' ? 'block' : 'none';
   document.getElementById('btn-eliminar').style.display = sec === 'paquetes' ? 'inline-flex' : 'none';
 
-  // Ocultar formulario de edición cuando estamos en home
+  // El formulario de edición y la preview solo en 'paquetes'
   const formPanel = document.querySelector('.admin-body > div > .panel:last-of-type');
+  if (formPanel) formPanel.style.display = sec === 'paquetes' ? '' : 'none';
+  document.querySelector('.preview-wrap').style.display = sec === 'paquetes' ? '' : 'none';
 
   if (sec === 'home') {
     renderHomeAsignaciones();
-    // Limpiar formulario
+    limpiarFormulario();
+  } else if (sec === 'items') {
+    renderItemsLista();
     limpiarFormulario();
   } else {
     bannerActivo = 0;
@@ -356,9 +377,13 @@ function renderHomeAsignaciones() {
     { label: 'Slider 1', lista: 'slider', idx: 0 },
     { label: 'Slider 2', lista: 'slider', idx: 1 },
     { label: 'Slider 3', lista: 'slider', idx: 2 },
+    { label: 'Slider 4', lista: 'slider', idx: 3 },
     { label: 'Banner 1', lista: 'banners', idx: 0 },
     { label: 'Banner 2', lista: 'banners', idx: 1 },
     { label: 'Banner 3', lista: 'banners', idx: 2 },
+    { label: 'Banner 4', lista: 'banners', idx: 3 },
+    { label: 'Banner 5', lista: 'banners', idx: 4 },
+    { label: 'Banner 6', lista: 'banners', idx: 5 },
   ];
 
   posiciones.forEach(pos => {
@@ -700,7 +725,7 @@ function actualizarPreview() {
 
   const bg = document.getElementById('preview-bg');
   const emoji = document.getElementById('preview-emoji');
-  const imgSrc = imagenTemporal || (b.imagen?.startsWith('data:') ? b.imagen : null);
+  const imgSrc = imagenTemporal || (b.imagen && (b.imagen.startsWith('data:') || b.imagen.startsWith('http')) ? b.imagen : null);
 
   if (imgSrc) {
     bg.style.cssText = `position:absolute;inset:0;background-image:url('${imgSrc}');background-size:cover;background-position:center;`;
@@ -718,63 +743,25 @@ function actualizarPreview() {
 // =============================================
 // CHECKLIST
 // =============================================
-const GRUPOS_CHECKLIST = [
-  {
-    grupo: '✈️ Vuelo y transporte',
-    items: [
-      { id: 'vuelo_internacional', label: 'Vuelo internacional' },
-      { id: 'vuelo_cabotaje',      label: 'Vuelo de cabotaje' },
-      { id: 'traslado_aeropuerto', label: 'Traslado aeropuerto/hotel' },
-      { id: 'transporte_ciudades', label: 'Transporte entre ciudades' },
-    ]
-  },
-  {
-    grupo: '🏨 Alojamiento',
-    items: [
-      { id: 'hotel',            label: 'Hotel' },
-      { id: 'desayuno',         label: 'Régimen de desayuno' },
-      { id: 'media_pension',    label: 'Media pensión (desayuno + cena)' },
-      { id: 'pension_completa', label: 'Pensión completa' },
-      { id: 'all_inclusive',    label: 'All inclusive' },
-    ]
-  },
-  {
-    grupo: '🎯 Actividades',
-    items: [
-      { id: 'excursiones',          label: 'Excursiones incluidas' },
-      { id: 'guia_espanol',         label: 'Guía en español' },
-      { id: 'entradas_atracciones', label: 'Entradas a atracciones' },
-      { id: 'seguro_viaje',         label: 'Seguro de viaje' },
-      { id: 'asistencia_24hs',      label: 'Asistencia al viajero 24hs' },
-    ]
-  },
-  {
-    grupo: '📄 Documentación',
-    items: [
-      { id: 'gestion_visa',  label: 'Gestión de visa' },
-      { id: 'documentacion', label: 'Documentación de viaje' },
-    ]
-  },
-];
+const GRUPOS_CHECKLIST = []; // OBSOLETO, mantenido por si algo lo referencia
 
-// Lista plana para producto.html
-const ITEMS_CHECKLIST = GRUPOS_CHECKLIST.flatMap(g => g.items);
+// Lista plana = items_incluye del storage
+function getItemsActuales() { return datos.items_incluye || []; }
 
 function renderChecklist(containerId, seleccionados) {
   const cont = document.getElementById(containerId);
   cont.innerHTML = '';
-  GRUPOS_CHECKLIST.forEach(grupo => {
-    const groupEl = document.createElement('div');
-    groupEl.className = 'check-group';
-    groupEl.innerHTML = `<div class="check-group-title">${grupo.grupo}</div>`;
-    grupo.items.forEach(item => {
-      const checked = seleccionados.includes(item.id);
-      const label = document.createElement('label');
-      label.className = 'check-item' + (checked ? ' checked' : '');
-      label.innerHTML = `<input type="checkbox" value="${item.id}" ${checked ? 'checked' : ''} onchange="toggleCheck(this)"/> ${item.label}`;
-      groupEl.appendChild(label);
-    });
-    cont.appendChild(groupEl);
+  const items = getItemsActuales();
+  if (items.length === 0) {
+    cont.innerHTML = '<p style="font-size:0.78rem;color:#666;padding:0.5rem 0">No hay ítems configurados. Agregálos desde la pestaña <strong>Ítems</strong>.</p>';
+    return;
+  }
+  items.forEach(item => {
+    const checked = seleccionados.includes(item.id);
+    const label = document.createElement('label');
+    label.className = 'check-item' + (checked ? ' checked' : '');
+    label.innerHTML = `<input type="checkbox" value="${item.id}" ${checked ? 'checked' : ''} onchange="toggleCheck(this)"/> ${item.label}`;
+    cont.appendChild(label);
   });
 }
 
@@ -784,6 +771,116 @@ function toggleCheck(input) {
 
 function getChecked(containerId) {
   return Array.from(document.querySelectorAll(`#${containerId} input:checked`)).map(i => i.value);
+}
+
+// =============================================
+// ÍTEMS DE INCLUYE — gestión (alta, edición, eliminación)
+// =============================================
+function slugify(str) {
+  return (str || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+function contarUsosItem(itemId) {
+  return (datos.paquetes || []).reduce((acc, p) => {
+    const a = (p.incluye || []).includes(itemId) ? 1 : 0;
+    const b = (p.no_incluye || []).includes(itemId) ? 1 : 0;
+    return acc + a + b;
+  }, 0);
+}
+
+function renderItemsLista() {
+  const cont = document.getElementById('items-lista');
+  const empty = document.getElementById('items-empty');
+  cont.innerHTML = '';
+  const items = datos.items_incluye || [];
+
+  if (items.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  items.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'item-row';
+    row.innerHTML = `
+      <input type="text" class="item-input" value="${item.label.replace(/"/g, '&quot;')}" data-idx="${i}" onblur="renombrarItem(${i}, this.value)" onkeydown="if(event.key==='Enter'){this.blur();}"/>
+      <button class="item-del" onclick="eliminarItemIncluye(${i})" title="Eliminar ítem">🗑</button>
+    `;
+    cont.appendChild(row);
+  });
+}
+
+function agregarItemIncluye() {
+  const input = document.getElementById('f-nuevo-item');
+  const label = input.value.trim();
+  if (!label) {
+    mostrarToast('❌ Escribí un nombre para el ítem', true);
+    return;
+  }
+  let id = slugify(label);
+  if (!id) {
+    mostrarToast('❌ El nombre no es válido', true);
+    return;
+  }
+  const existentes = (datos.items_incluye || []).map(x => x.id);
+  // Si el id ya existe, sumar sufijo numérico
+  let base = id, n = 2;
+  while (existentes.includes(id)) { id = base + '_' + n; n++; }
+
+  datos.items_incluye = datos.items_incluye || [];
+  datos.items_incluye.push({ id, label });
+  try {
+    guardarBanners(datos);
+    input.value = '';
+    renderItemsLista();
+    mostrarToast('✓ Ítem agregado');
+  } catch(e) { mostrarToast('❌ Error al guardar', true); }
+}
+
+function renombrarItem(idx, nuevoLabel) {
+  const items = datos.items_incluye || [];
+  const item = items[idx];
+  if (!item) return;
+  const label = nuevoLabel.trim();
+  if (!label || label === item.label) {
+    renderItemsLista();
+    return;
+  }
+  item.label = label;
+  try {
+    guardarBanners(datos);
+    mostrarToast('✓ Ítem actualizado');
+    renderItemsLista();
+  } catch(e) { mostrarToast('❌ Error al guardar', true); }
+}
+
+function eliminarItemIncluye(idx) {
+  const items = datos.items_incluye || [];
+  const item = items[idx];
+  if (!item) return;
+  const usos = contarUsosItem(item.id);
+  const msg = usos > 0
+    ? `¿Eliminar "${item.label}"?\nEstá usado en ${usos} paquete${usos !== 1 ? 's' : ''} — se va a destildar de todos ellos.`
+    : `¿Eliminar "${item.label}"?`;
+  if (!confirm(msg)) return;
+
+  // Quitar de la lista maestra
+  datos.items_incluye.splice(idx, 1);
+  // Quitar de todos los paquetes
+  (datos.paquetes || []).forEach(p => {
+    if (Array.isArray(p.incluye)) p.incluye = p.incluye.filter(x => x !== item.id);
+    if (Array.isArray(p.no_incluye)) p.no_incluye = p.no_incluye.filter(x => x !== item.id);
+  });
+  try {
+    guardarBanners(datos);
+    renderItemsLista();
+    mostrarToast('✓ Ítem eliminado');
+  } catch(e) { mostrarToast('❌ Error al guardar', true); }
 }
 
 // =============================================

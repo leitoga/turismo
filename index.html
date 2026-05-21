@@ -6,10 +6,10 @@
   <title>Agencia de Viajes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"/>
+  <link id="theme-css" rel="stylesheet" href="css/style-1.css"/>
+  <script src="js/theme-switcher.js"></script>
 </head>
-<body>
+<body class="page-home">
 
 <header class="header">
   <a href="index.html" class="logo"><img src="img/logo.png" alt="Agencia de Viajes"/></a>
@@ -28,6 +28,166 @@
   <div class="slider-dots" id="slider-dots"></div>
 </section>
 
+<!-- HERO COLLAGE (solo visible en Diseño 3) -->
+<section class="hero-collage">
+  <div class="collage-bg" id="collage-bg"></div>
+  <div class="collage-grid">
+    <!-- Lado izquierdo: contenido -->
+    <div class="collage-content">
+      <span class="collage-eyebrow"><span class="cl-sparkle">✦</span> Viví lo extraordinario</span>
+      <h1 class="collage-titulo">Tu próxima<br/>historia empieza<br/><em>acá<span class="cl-dot">.</span></em></h1>
+      <p class="collage-sub">Creamos viajes únicos para personas que buscan algo más que vacaciones.</p>
+      <a href="paquetes.html" class="collage-cta">
+        <span class="cl-cta-label">Descubrí destinos</span>
+        <span class="cl-cta-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Lado derecho: collage -->
+    <div class="collage-stage">
+      <!-- Trails decorativos -->
+      <svg class="cl-trails" viewBox="0 0 700 700" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 130 280 Q 220 180 320 230 Q 410 280 480 230" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="3 6" fill="none" opacity="0.45"/>
+        <path d="M 540 160 Q 580 240 540 320 Q 510 380 560 460" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="3 6" fill="none" opacity="0.4"/>
+        <path d="M 200 540 Q 300 600 420 540 Q 510 490 580 540 Q 640 590 690 540" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="3 6" fill="none" opacity="0.4"/>
+      </svg>
+      <!-- Avión con estela -->
+      <svg class="cl-plane" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M 10 100 Q 50 60 90 80 Q 130 100 170 50" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="3 5" fill="none" opacity="0.5"/>
+        <path d="M 170 50 l -12 -4 l 5 8 l -5 8 z" fill="#7C3AED" transform="rotate(-15 170 50)"/>
+      </svg>
+
+      <!-- Badge circular "VIAJÁ DIFERENTE" -->
+      <div class="cl-badge">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <path id="cl-circle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" />
+          </defs>
+          <text font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" letter-spacing="3" fill="#1a1a1a">
+            <textPath href="#cl-circle">VIAJÁ DIFERENTE · VIAJÁ DIFERENTE · </textPath>
+          </text>
+        </svg>
+        <span class="cl-badge-icon">✦</span>
+      </div>
+
+      <!-- 4 cards (las cargamos por JS) -->
+      <div class="cl-cards" id="collage-cards"></div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="cl-trust">
+    <div class="cl-trust-inner">
+      <div class="cl-trust-item">
+        <span class="cl-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </span>
+        <div>
+          <strong>Destinos increíbles</strong>
+          <span>Seleccionados para vos.</span>
+        </div>
+      </div>
+      <div class="cl-trust-item">
+        <span class="cl-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        <div>
+          <strong>Experiencias auténticas</strong>
+          <span>Viví lo que te transforma.</span>
+        </div>
+      </div>
+      <div class="cl-trust-item">
+        <span class="cl-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3zM3 19a2 2 0 0 0 2 2h1v-7H3z"/></svg>
+        </span>
+        <div>
+          <strong>Asesoramiento experto</strong>
+          <span>Te acompañamos siempre.</span>
+        </div>
+      </div>
+      <div class="cl-trust-item">
+        <span class="cl-trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <div>
+          <strong>Viajá tranquilo</strong>
+          <span>Nos ocupamos de todo.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO ORBITAL (solo visible en Diseño 2) -->
+<section class="hero-orbital">
+  <div class="hero-orbital-bg" id="hero-orbital-bg"></div>
+  <div class="hero-orbital-decor">
+    <div class="orbital-orb orbital-orb-1"></div>
+    <div class="orbital-orb orbital-orb-2"></div>
+    <span class="orbital-sparkle s1">✦</span>
+    <span class="orbital-sparkle s2">◆</span>
+    <span class="orbital-sparkle s3">+</span>
+    <span class="orbital-sparkle s4">✦</span>
+    <span class="orbital-sparkle s5">+</span>
+    <span class="orbital-sparkle s6">◆</span>
+    <span class="orbital-sparkle s7">✦</span>
+    <span class="orbital-sparkle s8">+</span>
+    <span class="orbital-sparkle s9">◆</span>
+    <span class="orbital-sparkle s10">✦</span>
+  </div>
+  <div class="hero-orbital-inner">
+    <div class="hero-orbital-content">
+      <span class="hero-orbital-eyebrow">✦ Viajá diferente</span>
+      <h1 class="hero-orbital-titulo">Un viaje.<br/>Infinitas <em>historias</em><span class="orbital-dot">.</span></h1>
+      <p class="hero-orbital-sub">Diseñamos experiencias únicas para almas curiosas. Vos elegís el destino, nosotros creamos la magia.</p>
+      <a href="paquetes.html" class="orbital-cta">
+        <span class="orbital-cta-icon">→</span>
+        <span class="orbital-cta-text">Empezá a explorar</span>
+      </a>
+    </div>
+
+    <div class="hero-orbital-stage" id="hero-orbital-stage">
+      <svg class="orbital-trail-svg" viewBox="0 0 600 600" preserveAspectRatio="none">
+        <defs>
+          <radialGradient id="trail-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(167,139,250,0.7)"/>
+            <stop offset="100%" stop-color="rgba(167,139,250,0)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="300" cy="300" r="2.5" fill="#A78BFA" opacity="0.9"/>
+        <circle cx="300" cy="100" r="1.5" fill="#A78BFA" opacity="0.5"/>
+        <circle cx="60" cy="280" r="1.5" fill="#E879F9" opacity="0.5"/>
+        <circle cx="540" cy="220" r="1.5" fill="#A78BFA" opacity="0.5"/>
+        <circle cx="220" cy="540" r="1.5" fill="#E879F9" opacity="0.5"/>
+        <line x1="300" y1="170" x2="300" y2="240" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="130" y1="280" x2="240" y2="290" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="470" y1="240" x2="360" y2="280" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="270" y1="470" x2="290" y2="360" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="2 4"/>
+      </svg>
+      <div class="orbital-ring orbital-ring-1"></div>
+      <div class="orbital-ring orbital-ring-2"></div>
+      <div class="orbital-center">
+        <div class="orbital-center-text">
+          <span>¿A dónde te lleva</span>
+          <span>tu próxima</span>
+          <em>aventura</em><span class="orbital-dot">?</span>
+        </div>
+      </div>
+      <div class="orbital-cards" id="orbital-cards"></div>
+    </div>
+  </div>
+
+  <div class="hero-orbital-pagination">
+    <span class="orbital-page-num">01</span>
+    <div class="orbital-page-dots">
+      <span class="orbital-pdot active"></span>
+      <span class="orbital-pdot"></span>
+      <span class="orbital-pdot"></span>
+      <span class="orbital-pdot"></span>
+    </div>
+  </div>
+</section>
+
 <!-- BANNERS FIJOS -->
 <section class="seccion" id="destinos">
   <div class="seccion-header">
@@ -42,8 +202,82 @@
 </section>
 
 <footer class="footer">
-  <div class="footer-logo"><img src="img/logo.png" alt="Agencia de Viajes" style="height:50px"/></div>
-  <p class="footer-copy">© 2025 Agencia de Viajes — Todos los derechos reservados</p>
+  <div class="footer-trust">
+    <span class="footer-trust-item">✦ +10 años de experiencia</span>
+    <span class="footer-trust-item">✦ Viajes 100% personalizados</span>
+    <span class="footer-trust-item">✦ +50 destinos increíbles</span>
+    <span class="footer-trust-item">✦ Miles de viajeros felices</span>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-col footer-brand">
+      <img src="img/logo.png" alt="Agencia de Viajes" class="footer-brand-logo"/>
+      <p class="footer-brand-desc">Experiencias únicas en los destinos más increíbles del mundo. Nosotros nos encargamos de todo, vos solo disfrutá.</p>
+      <p class="footer-tagline">Tu viaje empieza acá ✈</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-h">Contacto</h4>
+      <ul class="footer-list">
+        <li>
+          <a href="tel:+5491173743813" class="footer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +54 9 11 7374-3813
+          </a>
+        </li>
+        <li>
+          <a href="mailto:hola@nomadeviajes.com" class="footer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hola@nomadeviajes.com
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/5491173743813" target="_blank" class="footer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.859L.057 23.886l6.186-1.453A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.213-3.67.862.878-3.582-.234-.369A9.818 9.818 0 1112 21.818z"/></svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-h">Visitanos</h4>
+      <ul class="footer-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Av. Corrientes 1234, piso 8°<br/>Ciudad Autónoma de Buenos Aires
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Lun a Vie · 9:00 a 18:00<br/>Sáb · 10:00 a 14:00
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-h">Seguinos</h4>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="footer-social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer-social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="footer-social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.74a8.16 8.16 0 0 0 4.77 1.52V6.81a4.85 4.85 0 0 1-1.84-.12z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="footer-social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+      </div>
+      <p class="footer-social-tag">@nomadeviajes</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Agencia de Viajes — Todos los derechos reservados</p>
+    <p class="footer-legs">EVT Leg. 12345 · Disp. 1234/2024</p>
+  </div>
 </footer>
 
 <a href="https://wa.me/5491173743813?text=Hola%20Agencia de Viajes%20Viajes!%20Quisiera%20recibir%20información%20sobre%20sus%20paquetes%20turísticos." class="whatsapp-float" target="_blank">
@@ -53,6 +287,11 @@
 
 <script src="js/banners.js"></script>
 <script>
+  // Header scroll behavior
+  window.addEventListener('scroll', () => {
+    document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
   let sliderActivo = 0;
   let sliderBanners = [];
   let sliderTimer = null;
@@ -132,9 +371,22 @@
 
     renderSlider(home.slider);
 
+    // Render orbital cards (Diseño 2): los 4 del slider
+    renderOrbitalCards(home.slider);
+
+    // Render collage cards (Diseño 3): los 4 del slider
+    renderCollageCards(home.slider);
+
+    // Mostrar hasta 6 paquetes (2 filas de 3): primero los destacados, después el resto
+    const sliderIds = new Set(data.home.slider);
+    const featuredIds = new Set(data.home.banners.filter(Boolean));
+    const featured = home.banners;
+    const rest = data.paquetes.filter(p => !sliderIds.has(p.id) && !featuredIds.has(p.id));
+    const allCards = [...featured, ...rest].slice(0, 6);
+
     const grid = document.getElementById('banners-grid');
     grid.innerHTML = '';
-    home.banners.forEach(b => {
+    allCards.forEach(b => {
       const card = document.createElement('a');
       card.className = 'banner-card';
       card.href = `producto.html?id=${b.id}`;
@@ -142,6 +394,149 @@
       grid.appendChild(card);
     });
   }
+
+  function renderOrbitalCards(banners) {
+    const container = document.getElementById('orbital-cards');
+    if (!container) return;
+    container.innerHTML = '';
+    const items = banners.slice(0, 4);
+    items.forEach((b, i) => {
+      const a = document.createElement('a');
+      a.className = `orbital-card pos-${i+1}`;
+      a.href = `producto.html?id=${b.id}`;
+      a.dataset.idx = i;
+      const hasImg = b.imagen && (b.imagen.startsWith('data:') || b.imagen.startsWith('http'));
+      a.dataset.img = hasImg ? b.imagen : '';
+      a.innerHTML = `
+        <div class="orbital-card-bg" style="${hasImg ? `background-image:url('${b.imagen}')` : `background:${b.color}`}"></div>
+        <div class="orbital-card-overlay"></div>
+        <div class="orbital-card-body">
+          <span class="orbital-card-titulo">${b.destino.split(',')[0]}</span>
+          <span class="orbital-card-sub">${b.titulo}</span>
+        </div>
+        <span class="orbital-card-arrow">→</span>
+      `;
+      a.addEventListener('mouseenter', () => setActiveOrbital(i, true));
+      container.appendChild(a);
+    });
+    iniciarCicloOrbital(items.length);
+  }
+
+  let orbitalIdx = 0;
+  let orbitalTimer = null;
+  let orbitalPaused = false;
+
+  function setActiveOrbital(idx, fromHover) {
+    orbitalIdx = idx;
+    const cards = document.querySelectorAll('.orbital-card');
+    cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+    const bg = document.getElementById('hero-orbital-bg');
+    if (bg) {
+      const img = cards[idx]?.dataset.img;
+      if (img) bg.style.backgroundImage = `url('${img}')`;
+    }
+    // Sync paginación
+    const pdots = document.querySelectorAll('.orbital-pdot');
+    pdots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    const pnum = document.querySelector('.orbital-page-num');
+    if (pnum) pnum.textContent = String(idx + 1).padStart(2, '0');
+    if (fromHover) reiniciarCicloOrbital();
+  }
+
+  function iniciarCicloOrbital(total) {
+    if (!total) return;
+    clearInterval(orbitalTimer);
+    setActiveOrbital(0);
+    orbitalTimer = setInterval(() => {
+      if (orbitalPaused) return;
+      const next = (orbitalIdx + 1) % total;
+      setActiveOrbital(next);
+    }, 3000);
+  }
+
+  function reiniciarCicloOrbital() {
+    const total = document.querySelectorAll('.orbital-card').length;
+    iniciarCicloOrbital(total);
+  }
+
+  // Pausar al hover sobre el stage entero
+  document.addEventListener('mouseenter', e => {
+    if (e.target?.closest && e.target.closest('.hero-orbital-stage')) orbitalPaused = true;
+  }, true);
+  document.addEventListener('mouseleave', e => {
+    if (e.target?.closest && e.target.closest('.hero-orbital-stage')) orbitalPaused = false;
+  }, true);
+
+  // ===== DISEÑO 3 — COLLAGE CARDS =====
+  function renderCollageCards(banners) {
+    const container = document.getElementById('collage-cards');
+    if (!container) return;
+    container.innerHTML = '';
+    const icons = ['♡', '⛰', '◆', '⌂'];
+    const items = banners.slice(0, 4);
+    items.forEach((b, i) => {
+      const a = document.createElement('a');
+      a.className = `cl-card cl-card-${i+1}`;
+      a.href = `producto.html?id=${b.id}`;
+      a.dataset.idx = i;
+      const hasImg = b.imagen && (b.imagen.startsWith('data:') || b.imagen.startsWith('http'));
+      a.dataset.img = hasImg ? b.imagen : '';
+      a.innerHTML = `
+        <div class="cl-card-bg" style="${hasImg ? `background-image:url('${b.imagen}')` : `background:${b.color}`}"></div>
+        <div class="cl-card-overlay"></div>
+        <div class="cl-card-body">
+          <span class="cl-card-titulo">${b.destino.split(',')[0]}</span>
+          <span class="cl-card-sub">${b.titulo}</span>
+        </div>
+        <span class="cl-card-icon">${icons[i] || '✦'}</span>
+      `;
+      a.addEventListener('mouseenter', () => setActiveCollage(i, true));
+      container.appendChild(a);
+    });
+    iniciarCicloCollage(items.length);
+  }
+
+  let collageIdx = 0;
+  let collageTimer = null;
+  let collagePaused = false;
+
+  function setActiveCollage(idx, fromHover) {
+    collageIdx = idx;
+    const cards = document.querySelectorAll('.cl-card');
+    cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+    const bg = document.getElementById('collage-bg');
+    if (bg) {
+      const img = cards[idx]?.dataset.img;
+      if (img) {
+        bg.style.backgroundImage = `url('${img}')`;
+        bg.classList.add('loaded');
+      }
+    }
+    if (fromHover) reiniciarCicloCollage();
+  }
+
+  function iniciarCicloCollage(total) {
+    if (!total) return;
+    clearInterval(collageTimer);
+    setActiveCollage(0);
+    collageTimer = setInterval(() => {
+      if (collagePaused) return;
+      const next = (collageIdx + 1) % total;
+      setActiveCollage(next);
+    }, 3200);
+  }
+
+  function reiniciarCicloCollage() {
+    const total = document.querySelectorAll('.cl-card').length;
+    iniciarCicloCollage(total);
+  }
+
+  document.addEventListener('mouseenter', e => {
+    if (e.target?.closest && e.target.closest('.collage-stage')) collagePaused = true;
+  }, true);
+  document.addEventListener('mouseleave', e => {
+    if (e.target?.closest && e.target.closest('.collage-stage')) collagePaused = false;
+  }, true);
 
   renderHome();
 </script>

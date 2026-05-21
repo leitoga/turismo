@@ -1,8 +1,26 @@
 {
   "home": {
-    "slider": ["home_1", "home_2", "home_3"],
-    "banners": ["paq_1", "paq_2", "paq_3"]
+    "slider": ["home_1", "home_2", "home_3", "home_b1"],
+    "banners": ["paq_1", "paq_2", "paq_3", "home_b2", "home_b3", "paq_3"]
   },
+  "items_incluye": [
+    {"id": "vuelo_internacional", "label": "Vuelo internacional"},
+    {"id": "vuelo_cabotaje", "label": "Vuelo de cabotaje"},
+    {"id": "traslado_aeropuerto", "label": "Traslado aeropuerto/hotel"},
+    {"id": "transporte_ciudades", "label": "Transporte entre ciudades"},
+    {"id": "hotel", "label": "Hotel"},
+    {"id": "desayuno", "label": "Régimen de desayuno"},
+    {"id": "media_pension", "label": "Media pensión (desayuno + cena)"},
+    {"id": "pension_completa", "label": "Pensión completa"},
+    {"id": "all_inclusive", "label": "All inclusive"},
+    {"id": "excursiones", "label": "Excursiones incluidas"},
+    {"id": "guia_espanol", "label": "Guía en español"},
+    {"id": "entradas_atracciones", "label": "Entradas a atracciones"},
+    {"id": "seguro_viaje", "label": "Seguro de viaje"},
+    {"id": "asistencia_24hs", "label": "Asistencia al viajero 24hs"},
+    {"id": "gestion_visa", "label": "Gestión de visa"},
+    {"id": "documentacion", "label": "Documentación de viaje"}
+  ],
   "paquetes": [
     {
       "id": "home_1",
@@ -290,6 +308,148 @@
       ],
       "color": "#2a1a4a",
       "emoji": "🗼"
+    },
+    {
+      "id": "asia_1",
+      "titulo": "Tokyo Eléctrico",
+      "destino": "Japón",
+      "precio": "1.450.000",
+      "moneda": "ARS",
+      "descripcion_corta": "9 noches en la metrópolis más futurista del planeta. Shibuya, Akihabara y sushi de mercado.",
+      "descripcion_larga": "Tokyo es una ciudad que existe en otra dimensión: rascacielos imposibles, callejones zen escondidos y la mejor gastronomía del mundo a cada paso. Este paquete te sumerge en la capital japonesa por 9 noches con un itinerario diseñado para no dejarte nada afuera.\n\nEl alojamiento es en un hotel 4 estrellas en Shinjuku con desayuno japonés tradicional. Las excursiones cubren los íconos absolutos: el cruce de Shibuya, los templos de Asakusa, el santuario Meiji, la zona otaku de Akihabara, la torre Tokyo Skytree y el mercado de Toyosu al amanecer para ver la subasta de atún.\n\nIncluye además un curso de cocina japonesa, una experiencia de sumo (en temporada) y un día libre con Japan Rail Pass para visitar Yokohama o Kamakura. Te llevamos al ramen más auténtico, al bar de gatos más kawaii y al jardín secreto que ningún turista conoce.",
+      "duracion": "9 noches",
+      "categoria": "ciudad",
+      "fecha_salida": "Salidas todos los lunes",
+      "cupos": "16",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["pension_completa", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Tokyo", "descripcion": "Vuelo internacional con escala. Llegada al aeropuerto de Narita y traslado al hotel en Shinjuku."},
+        {"titulo": "Tokyo clásico", "descripcion": "Tour por Asakusa, templo Senso-ji, calle Nakamise y crucero por el río Sumida hasta los jardines Hama-rikyu."},
+        {"titulo": "Shibuya y Harajuku", "descripcion": "El famoso cruce de Shibuya, la estatua de Hachiko, las calles fashion de Harajuku y el santuario Meiji."},
+        {"titulo": "Akihabara y otaku", "descripcion": "Día completo en el barrio electrónico: tiendas de anime/manga, retro gaming, maid cafés y arcade Don Quijote."},
+        {"titulo": "Mercado de Toyosu", "descripcion": "Visita al amanecer al mercado mayorista de pescado. Desayuno con sushi recién preparado en Tsukiji Outer Market."},
+        {"titulo": "Día libre con JR Pass", "descripcion": "Jornada libre para excursión opcional a Yokohama (Chinatown, Cup Noodles Museum) o Kamakura (Gran Buda)."},
+        {"titulo": "Clase de cocina", "descripcion": "Mañana: clase de sushi y ramen con chef local. Tarde: Tokyo Skytree y vistas panorámicas."},
+        {"titulo": "Shinjuku y Roppongi", "descripcion": "Distrito gubernamental con vista desde el observatorio gratuito. Cena en Omoide Yokocho. Vida nocturna en Roppongi."},
+        {"titulo": "TeamLab y Odaiba", "descripcion": "Museo digital interactivo TeamLab Planets y la isla artificial de Odaiba con sus arcades del futuro."},
+        {"titulo": "Regreso", "descripcion": "Última mañana de compras en Ginza. Transfer al aeropuerto y vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80",
+        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
+        "https://images.unsplash.com/photo-1554797589-7241bb691973?w=800&q=80"
+      ],
+      "color": "#1a1a3a",
+      "emoji": "🗾"
+    },
+    {
+      "id": "asia_2",
+      "titulo": "Kyoto Milenario",
+      "destino": "Japón",
+      "precio": "1.180.000",
+      "moneda": "ARS",
+      "descripcion_corta": "7 noches entre templos, jardines zen y geishas. El Japón más tradicional y espiritual.",
+      "descripcion_larga": "Kyoto fue la capital de Japón durante más de mil años y conserva intacta la esencia del Japón imperial: templos de madera, jardines zen perfectamente cuidados, casas de té tradicionales y el barrio de las geishas. Este paquete es un viaje al alma del Japón profundo.\n\nEl alojamiento combina 4 noches en un ryokan (hostal tradicional con tatami, futón y onsen) en Gion, el barrio histórico, y 3 noches en un hotel boutique con vista al río Kamogawa. Los desayunos son kaiseki, el arte culinario japonés llevado al extremo.\n\nLas excursiones incluyen el bosque de bambú de Arashiyama al amanecer, los miles de torii rojos de Fushimi Inari, el pabellón dorado Kinkaku-ji, el templo Kiyomizu-dera, una ceremonia del té con maestra acreditada, y una caminata por el barrio de geishas con cena tradicional. Una excursión de día completo a Nara para visitar el Gran Buda y los ciervos sagrados.",
+      "duracion": "7 noches",
+      "categoria": "cultural",
+      "fecha_salida": "Marzo a Noviembre",
+      "cupos": "12",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "media_pension", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Tokyo → Kyoto", "descripcion": "Vuelo internacional, conexión y tren bala Shinkansen a Kyoto. Check-in en ryokan tradicional en Gion."},
+        {"titulo": "Templos del Este", "descripcion": "Kiyomizu-dera, las calles empedradas de Higashiyama, Yasaka Pagoda y barrio histórico Gion al atardecer."},
+        {"titulo": "Arashiyama", "descripcion": "Bosque de bambú al amanecer, templo Tenryu-ji, paseo en barca por el río Hozugawa y zona de monos Iwatayama."},
+        {"titulo": "Fushimi Inari y sake", "descripcion": "Los miles de torii rojos del santuario Fushimi Inari. Tarde en Fushimi: ruta del sake con degustación en bodegas centenarias."},
+        {"titulo": "Pabellones dorado y plateado", "descripcion": "Kinkaku-ji (Pabellón Dorado), jardín zen de Ryoan-ji y Ginkaku-ji (Pabellón de Plata) por el Camino del Filósofo."},
+        {"titulo": "Nara", "descripcion": "Excursión a Nara: Gran Buda de Todai-ji, parque de ciervos sagrados y jardín Isuien."},
+        {"titulo": "Ceremonia del té y geishas", "descripcion": "Ceremonia del té con maestra autorizada. Cena tradicional kaiseki y caminata nocturna por Pontocho."},
+        {"titulo": "Regreso", "descripcion": "Última mañana en mercado Nishiki. Shinkansen a Tokyo y vuelo de regreso a Buenos Aires."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
+        "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80",
+        "https://images.unsplash.com/photo-1503640538573-148065ba4904?w=800&q=80"
+      ],
+      "color": "#3a1a2a",
+      "emoji": "⛩️"
+    },
+    {
+      "id": "asia_3",
+      "titulo": "Japón Anime & Otaku",
+      "destino": "Japón",
+      "precio": "1.350.000",
+      "moneda": "ARS",
+      "descripcion_corta": "10 noches por el Japón fan: Studio Ghibli, Akihabara, Nintendo y los sets reales del anime.",
+      "descripcion_larga": "Diseñado para los fanáticos del anime, el manga y la cultura pop japonesa. Este paquete es 100% temático y te lleva a los lugares más icónicos de la cultura otaku: museos, tiendas, barrios y experiencias que vienen directamente de tus series favoritas.\n\nIncluye 6 noches en Tokyo (Akihabara y Shinjuku) y 4 noches en Osaka (Den Den Town). Las visitas obligadas: Museo Ghibli en Mitaka (entradas garantizadas, vendidas con meses de anticipación), Nintendo Tokyo en Shibuya Parco, Pokémon Center Mega en Sunshine City, el barrio entero de Akihabara con tiendas Mandarake y BookOff, la nueva atracción Super Nintendo World en Universal Studios Japan, y el Museo del Manga en Kyoto.\n\nExperiencias incluidas: cena en un maid café temático, sesión de cosplay con disfraz incluido, karaoke en un box privado, y tour por los sets reales de animes famosos (Madoka Magica, Sword Art Online, Suzume). Un viaje hecho para fans, por fans.",
+      "duracion": "10 noches",
+      "categoria": "cultural",
+      "fecha_salida": "Salidas los viernes",
+      "cupos": "14",
+      "incluye": ["vuelo_internacional", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "documentacion"],
+      "no_incluye": ["media_pension", "pension_completa", "all_inclusive", "gestion_visa"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Tokyo", "descripcion": "Vuelo internacional. Llegada y traslado al hotel en Akihabara, el corazón otaku del planeta."},
+        {"titulo": "Akihabara total", "descripcion": "Día completo: Mandarake, Animate, Yodobashi, retro gaming en Super Potato, maid café y cena temática."},
+        {"titulo": "Museo Ghibli", "descripcion": "Visita al Museo Ghibli en Mitaka (entradas garantizadas). Tarde en Kichijoji: tiendas de figuras y manga."},
+        {"titulo": "Pokémon & Nintendo", "descripcion": "Mañana en Nintendo Tokyo (Shibuya Parco). Pokémon Center Mega en Sunshine City. Cena en Pokémon Café."},
+        {"titulo": "Cosplay y Harajuku", "descripcion": "Sesión de cosplay profesional con foto. Tarde en Harajuku: Takeshita Street, kawaii fashion y crepes."},
+        {"titulo": "Día libre Tokyo", "descripcion": "Jornada libre: Studio Sunrise Café, Capcom Bar, Final Fantasy Café, o tour por sets reales de anime."},
+        {"titulo": "Tokyo → Osaka", "descripcion": "Tren bala a Osaka. Tarde en Den Den Town (el Akihabara del oeste) y cena en Dotonbori."},
+        {"titulo": "Universal Studios", "descripcion": "Día completo en Universal Studios Japan con acceso a Super Nintendo World y la zona de One Piece."},
+        {"titulo": "Kyoto: Museo del Manga", "descripcion": "Excursión a Kyoto: Museo Internacional del Manga con +300.000 títulos y experiencia inmersiva."},
+        {"titulo": "Día libre Osaka", "descripcion": "Compras finales, karaoke o exploración libre: Kuromon Market, parque del Castillo, mirador Umeda Sky."},
+        {"titulo": "Regreso", "descripcion": "Tren a Tokyo, transfer al aeropuerto Narita y vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&q=80",
+        "https://images.unsplash.com/photo-1554797589-7241bb691973?w=800&q=80",
+        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80"
+      ],
+      "color": "#2a1a3a",
+      "emoji": "🎌"
+    },
+    {
+      "id": "asia_4",
+      "titulo": "Gran Tour China",
+      "destino": "China",
+      "precio": "1.650.000",
+      "moneda": "ARS",
+      "descripcion_corta": "12 noches por las 4 ciudades imperiales: Beijing, Xi'an, Shanghai y Guilin. Incluye visa.",
+      "descripcion_larga": "China es un mundo aparte, y este Gran Tour te lleva a los 4 destinos imprescindibles del país más extenso de Asia. Una experiencia épica de 12 noches que combina historia milenaria, paisajes de cuento y la modernidad más futurista de Shanghai.\n\nEl recorrido empieza en Beijing con 4 noches: la Ciudad Prohibida, la Plaza de Tiananmen, el Palacio de Verano, el Templo del Cielo y un día completo en la Gran Muralla (sección de Mutianyu, menos turística y más espectacular).\n\nSigue Xi'an con 2 noches para los Guerreros de Terracota, una de las 8 maravillas arqueológicas del mundo, y la muralla antigua de la ciudad. Luego 3 noches en Guilin para navegar el río Li entre montañas kársticas (el paisaje de los billetes chinos) y conocer los campos de arroz de Longji.\n\nCierra con 3 noches en Shanghai: el Bund, las torres del distrito de Pudong, el jardín Yu Yuan, los rascacielos más altos del mundo y los mercados callejeros nocturnos. Incluye trenes de alta velocidad, vuelos internos, guía bilingüe y la gestión completa de la visa china.",
+      "duracion": "12 noches",
+      "categoria": "cultural",
+      "fecha_salida": "Salidas los miércoles",
+      "cupos": "18",
+      "incluye": ["vuelo_internacional", "vuelo_cabotaje", "traslado_aeropuerto", "transporte_ciudades", "hotel", "desayuno", "media_pension", "excursiones", "guia_espanol", "entradas_atracciones", "seguro_viaje", "asistencia_24hs", "gestion_visa", "documentacion"],
+      "no_incluye": ["all_inclusive"],
+      "itinerario": [
+        {"titulo": "Buenos Aires → Beijing", "descripcion": "Vuelo internacional con escala. Llegada a la capital china, traslado al hotel y primera caminata."},
+        {"titulo": "Ciudad Prohibida", "descripcion": "Plaza de Tiananmen y Ciudad Prohibida con guía. Tarde en el Templo del Cielo y mercado de la Perla."},
+        {"titulo": "Gran Muralla", "descripcion": "Excursión de día completo a la Gran Muralla (sección Mutianyu) con teleférico y bajada en trineo."},
+        {"titulo": "Palacio de Verano", "descripcion": "Mañana en el Palacio de Verano. Tarde libre en los hutongs (callejones tradicionales) en rickshaw."},
+        {"titulo": "Beijing → Xi'an", "descripcion": "Tren bala a Xi'an (5h). Llegada y paseo nocturno por la muralla antigua iluminada."},
+        {"titulo": "Guerreros de Terracota", "descripcion": "Día completo en el mausoleo de Qin Shi Huang: las 3 fosas de los Guerreros de Terracota."},
+        {"titulo": "Xi'an → Guilin", "descripcion": "Vuelo interno a Guilin. Llegada y paseo por el lago Shanhu con sus pagodas gemelas."},
+        {"titulo": "Río Li", "descripcion": "Crucero de día completo por el río Li entre montañas kársticas hasta Yangshuo. Ciclismo opcional."},
+        {"titulo": "Terrazas de arroz", "descripcion": "Excursión a las terrazas de arroz de Longji (Espinazo del Dragón) en la aldea Ping'an."},
+        {"titulo": "Guilin → Shanghai", "descripcion": "Vuelo a Shanghai. Tarde en el Bund con vista al skyline de Pudong y crucero nocturno."},
+        {"titulo": "Shanghai moderno", "descripcion": "Torre Shanghai Tower (la 2ª más alta del mundo), Lujiazui financiero y compras en Nanjing Road."},
+        {"titulo": "Jardín Yu y mercados", "descripcion": "Jardín Yu Yuan, casco antiguo, mercados callejeros nocturnos y Templo del Buda de Jade."},
+        {"titulo": "Regreso", "descripcion": "Última mañana en el barrio francés. Transfer al aeropuerto Pudong y vuelo de regreso."}
+      ],
+      "imagen": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200&q=80",
+      "galeria": [
+        "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80",
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80",
+        "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=800&q=80"
+      ],
+      "color": "#4a1a1a",
+      "emoji": "🏯"
     }
   ]
 }

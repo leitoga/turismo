@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Presupuesto — Agencia de Viajes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <script src="js/theme-switcher.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #FAFAFA;
+      color: #0A0A0A;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+
+    /* HERO */
+    .ps-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 4rem;
+      text-align: center;
+      position: relative;
+    }
+    .ps-hero::before, .ps-hero::after {
+      content: '✦';
+      position: absolute;
+      color: #7C3AED;
+      opacity: 0.5;
+      animation: ps-twinkle 3s ease-in-out infinite;
+    }
+    .ps-hero::before { top: 25%; left: 18%; font-size: 1.3rem; }
+    .ps-hero::after { top: 45%; right: 22%; font-size: 0.95rem; color: #E879F9; animation-delay: 1s; }
+    @keyframes ps-twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.85; transform: scale(1.1); }
+    }
+    .ps-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #7C3AED;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .ps-eyebrow::before { content: '✦'; font-size: 1.1em; }
+    .ps-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #0A0A0A;
+      margin-bottom: 1.5rem;
+      max-width: 22ch;
+      margin-inline: auto;
+    }
+    .ps-title em {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #7C3AED;
+      letter-spacing: -0.02em;
+    }
+    .ps-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #6B6B70;
+      max-width: 58ch;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* SECCIÓN: SOBRE EL SISTEMA */
+    .ps-about {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 5rem;
+    }
+    .ps-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      color: #0A0A0A;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+    .ps-section-desc {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: #6B6B70;
+      max-width: 58ch;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .ps-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .ps-feat {
+      background: #fff;
+      border: 1px solid #E8E6EC;
+      border-radius: 18px;
+      padding: 1.8rem;
+      transition: all 0.25s ease;
+    }
+    .ps-feat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(124, 58, 237, 0.1);
+      border-color: rgba(124, 58, 237, 0.2);
+    }
+    .ps-feat-ico {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: #EDE6FF;
+      color: #7C3AED;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .ps-feat-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0A0A0A;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .ps-feat-desc {
+      font-size: 0.9rem;
+      color: #6B6B70;
+      line-height: 1.6;
+    }
+
+    /* ¿QUÉ INCLUYE? */
+    .ps-includes {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2.5rem 5rem;
+    }
+    .ps-includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 2rem;
+      background: #fff;
+      border: 1px solid #E8E6EC;
+      border-radius: 22px;
+      padding: 2.2rem;
+    }
+    .ps-inc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #2C2C2E;
+      line-height: 1.5;
+      padding: 0.4rem 0;
+    }
+    .ps-inc-item::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: #EDE6FF;
+      color: #7C3AED;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+
+    /* PRICING */
+    .ps-pricing {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2.5rem 6rem;
+    }
+    .ps-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+    .ps-plan {
+      background: #fff;
+      border: 1px solid #E8E6EC;
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .ps-plan:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(124, 58, 237, 0.15);
+    }
+    .ps-plan-pro {
+      background: linear-gradient(155deg, #1a1a1a 0%, #2a1a4a 100%);
+      color: #fff;
+      border: none;
+    }
+    .ps-plan-pro::before {
+      content: '✦ Personalizado';
+      position: absolute;
+      top: -12px;
+      right: 1.8rem;
+      background: linear-gradient(120deg, #A78BFA, #E879F9);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 0 8px 24px rgba(167, 139, 250, 0.4);
+    }
+    .ps-plan-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7C3AED;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .ps-plan-pro .ps-plan-tag { color: #C4B5FD; }
+    .ps-plan-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.4rem;
+      color: inherit;
+    }
+    .ps-plan-name em {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: #7C3AED;
+    }
+    .ps-plan-pro .ps-plan-name em {
+      background: linear-gradient(120deg, #A78BFA, #E879F9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .ps-plan-tagline {
+      font-size: 0.95rem;
+      color: #6B6B70;
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+    .ps-plan-pro .ps-plan-tagline { color: rgba(255,255,255,0.7); }
+
+    .ps-plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .ps-plan-currency {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #6B6B70;
+    }
+    .ps-plan-pro .ps-plan-currency { color: rgba(255,255,255,0.7); }
+    .ps-plan-amount {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 3.8rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #0A0A0A;
+    }
+    .ps-plan-pro .ps-plan-amount { color: #fff; }
+    .ps-plan-once {
+      font-size: 0.82rem;
+      color: #9B9BA0;
+      margin-bottom: 1.8rem;
+      font-weight: 500;
+    }
+    .ps-plan-pro .ps-plan-once { color: rgba(255,255,255,0.55); }
+
+    .ps-plan-divider {
+      border: none;
+      border-top: 1px solid #E8E6EC;
+      margin: 1.5rem 0;
+    }
+    .ps-plan-pro .ps-plan-divider { border-color: rgba(255,255,255,0.15); }
+
+    .ps-plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .ps-plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #2C2C2E;
+    }
+    .ps-plan-pro .ps-plan-features li { color: rgba(255,255,255,0.85); }
+    .ps-plan-features li::before {
+      content: '✓';
+      color: #7C3AED;
+      font-weight: 800;
+      flex-shrink: 0;
+      width: 18px;
+    }
+    .ps-plan-pro .ps-plan-features li::before {
+      background: linear-gradient(120deg, #A78BFA, #E879F9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .ps-plan-features li.bold { font-weight: 600; color: #0A0A0A; }
+    .ps-plan-pro .ps-plan-features li.bold { color: #fff; }
+
+    .ps-plan-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #0A0A0A;
+      color: #fff;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.4rem 0.45rem 0.4rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .ps-plan-cta::after {
+      content: '→';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: #7C3AED;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: transform 0.25s;
+    }
+    .ps-plan-pro .ps-plan-cta {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .ps-plan-pro .ps-plan-cta::after {
+      background: linear-gradient(135deg, #A78BFA, #E879F9);
+    }
+    .ps-plan-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(124, 58, 237, 0.3); }
+    .ps-plan-cta:hover::after { transform: rotate(-45deg); }
+
+    /* FOOTER NOTE */
+    .ps-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6B6B70;
+      max-width: 50ch;
+      margin: 0 auto;
+      line-height: 1.6;
+      padding: 0 2rem 4rem;
+    }
+    .ps-note strong { color: #0A0A0A; font-weight: 600; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .ps-features { grid-template-columns: 1fr; }
+      .ps-pricing-grid { grid-template-columns: 1fr; }
+      .ps-includes-grid { grid-template-columns: 1fr; padding: 1.8rem; }
+    }
+    @media (max-width: 560px) {
+      .ps-hero { padding: 4rem 1.5rem 3rem; }
+      .ps-about { padding: 2rem 1.5rem 4rem; }
+      .ps-pricing { padding: 1rem 1.5rem 5rem; }
+      .ps-includes { padding: 0 1.5rem 4rem; }
+      .ps-plan { padding: 2rem 1.5rem; }
+      .ps-plan-amount { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body class="page-presupuesto">
+
+<!-- HERO -->
+<section class="ps-hero">
+  <span class="ps-eyebrow">Presupuesto · 2025</span>
+  <h1 class="ps-title">Una agencia digital,<br/><em>todo incluido</em>.</h1>
+  <p class="ps-subtitle">Un sitio web completo para tu agencia de viajes, listo para usar. Tres estilos visuales para elegir, un panel de administración propio y todo lo necesario para empezar a vender online.</p>
+</section>
+
+<!-- COMO ESTÁ COMPUESTO -->
+<section class="ps-about">
+  <h2 class="ps-section-title">¿Cómo está compuesto el sistema?</h2>
+  <p class="ps-section-desc">Una solución completa, pensada para que tu agencia tenga presencia online profesional desde el día uno.</p>
+
+  <div class="ps-features">
+    <div class="ps-feat">
+      <div class="ps-feat-ico">🏠</div>
+      <h3 class="ps-feat-title">Sitio público</h3>
+      <p class="ps-feat-desc">Home con slider de destinos destacados, catálogo de paquetes con filtros, página de detalle por paquete con galería, itinerario y consulta directa por WhatsApp.</p>
+    </div>
+    <div class="ps-feat">
+      <div class="ps-feat-ico">⚙</div>
+      <h3 class="ps-feat-title">Panel de administración</h3>
+      <p class="ps-feat-desc">Para que vos mismo cargues, edites y elimines paquetes. Asignás qué aparece en el slider y en los banners destacados. Gestionás los servicios que incluye/no incluye cada paquete.</p>
+    </div>
+    <div class="ps-feat">
+      <div class="ps-feat-ico">✦</div>
+      <h3 class="ps-feat-title">3 diseños a elegir</h3>
+      <p class="ps-feat-desc">Tres estéticas completamente distintas: editorial sofisticada, cósmica con efectos visuales o moderna estilo collage. Elegís la que mejor representa a tu marca.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section class="ps-includes">
+  <h2 class="ps-section-title">Todo lo que incluye</h2>
+  <p class="ps-section-desc">Sin sorpresas ni costos ocultos.</p>
+  <div class="ps-includes-grid">
+    <div class="ps-inc-item">Diseño web 100% responsive (mobile, tablet, desktop)</div>
+    <div class="ps-inc-item">Hosting y dominio propio del primer año</div>
+    <div class="ps-inc-item">Panel de administración con login propio</div>
+    <div class="ps-inc-item">Gestión ilimitada de paquetes turísticos</div>
+    <div class="ps-inc-item">Integración directa con WhatsApp Business</div>
+    <div class="ps-inc-item">Galería de fotos por paquete</div>
+    <div class="ps-inc-item">Filtros avanzados (categoría, precio, servicios)</div>
+    <div class="ps-inc-item">Optimización SEO básica para Google</div>
+    <div class="ps-inc-item">Carga inicial de tus paquetes y datos reales</div>
+    <div class="ps-inc-item">Capacitación para usar el panel</div>
+    <div class="ps-inc-item">Soporte técnico durante el primer mes</div>
+    <div class="ps-inc-item">Entrega total en 7 a 10 días hábiles</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="ps-pricing">
+  <h2 class="ps-section-title">Inversión</h2>
+  <p class="ps-section-desc">Elegí el plan que mejor se adapta a tu agencia. Pago único, sin mensualidades.</p>
+
+  <div class="ps-pricing-grid">
+    <!-- PLAN 1: DISEÑO PREDEFINIDO -->
+    <div class="ps-plan">
+      <span class="ps-plan-tag">Diseño predefinido</span>
+      <h3 class="ps-plan-name">Plan <em>Esencial</em></h3>
+      <p class="ps-plan-tagline">Elegís uno de los 3 diseños propuestos (Nómade, Wayfar o Escape) y lo adaptamos a tu marca.</p>
+
+      <div class="ps-plan-price">
+        <span class="ps-plan-currency">USD</span>
+        <span class="ps-plan-amount">1.000</span>
+      </div>
+      <p class="ps-plan-once">Pago único · Sin mensualidades</p>
+
+      <hr class="ps-plan-divider"/>
+
+      <ul class="ps-plan-features">
+        <li class="bold">Sitio completo + panel admin</li>
+        <li>Elegís 1 de los 3 diseños mostrados</li>
+        <li>Adaptación a tu logo y paleta</li>
+        <li>Carga inicial de paquetes (hasta 20)</li>
+        <li>Hosting + dominio primer año</li>
+        <li>Capacitación de uso</li>
+        <li>Soporte técnico 30 días</li>
+      </ul>
+
+      <a href="https://wa.me/5491173743813?text=Hola!%20Estoy%20interesado%20en%20el%20Plan%20Esencial%20(USD%201000).%20%C2%BFPodr%C3%ADamos%20coordinar?" class="ps-plan-cta" target="_blank">
+        <span>Empezar con este plan</span>
+      </a>
+    </div>
+
+    <!-- PLAN 2: DISEÑO PERSONALIZADO -->
+    <div class="ps-plan ps-plan-pro">
+      <span class="ps-plan-tag">Diseño a medida</span>
+      <h3 class="ps-plan-name">Plan <em>Premium</em></h3>
+      <p class="ps-plan-tagline">Diseño exclusivo creado desde cero para tu agencia, único en el mundo.</p>
+
+      <div class="ps-plan-price">
+        <span class="ps-plan-currency">USD</span>
+        <span class="ps-plan-amount">1.500</span>
+      </div>
+      <p class="ps-plan-once">Pago único · Sin mensualidades</p>
+
+      <hr class="ps-plan-divider"/>
+
+      <ul class="ps-plan-features">
+        <li class="bold">Todo lo del Plan Esencial</li>
+        <li>Diseño visual 100% personalizado</li>
+        <li>Identidad de marca única</li>
+        <li>Hasta 3 rondas de revisión de diseño</li>
+        <li>Carga ilimitada de paquetes</li>
+        <li>Animaciones y micro-interacciones a medida</li>
+        <li>Soporte técnico 60 días</li>
+      </ul>
+
+      <a href="https://wa.me/5491173743813?text=Hola!%20Estoy%20interesado%20en%20el%20Plan%20Premium%20(USD%201500%20-%20dise%C3%B1o%20personalizado).%20%C2%BFPodr%C3%ADamos%20coordinar?" class="ps-plan-cta" target="_blank">
+        <span>Quiero diseño exclusivo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<p class="ps-note">¿Tenés dudas o querés ver más opciones? <strong>Coordinemos una llamada sin compromiso.</strong> Te respondemos por WhatsApp en menos de 1 hora.</p>
+
+</body>
+</html>
