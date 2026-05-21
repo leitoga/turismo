@@ -64,7 +64,6 @@ body.has-light-hero .header,
   background: rgba(237, 229, 211, 0.95);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(15, 42, 63, 0.08);
-  padding: 1rem 3rem;
 }
 
 .logo { display: flex; align-items: center; text-decoration: none; }
@@ -1387,9 +1386,12 @@ body.page-paquetes .seccion-header {
 }
 
 @media (max-width: 560px) {
-  .nav { display: flex; gap: 0.65rem; }
-  .nav a { font-size: 0.78rem; padding: 0; }
-  .nav .admin-link { display: inline-flex; padding: 0.35rem 0.85rem; font-size: 0.72rem; }
+  .header { padding: 0.7rem 1rem; flex-wrap: nowrap; }
+  .logo img { height: 32px; }
+  .nav { display: flex; gap: 0.5rem; flex-wrap: nowrap; }
+  .nav a { font-size: 0.72rem; padding: 0; white-space: nowrap; }
+  .nav a:not(.admin-link) { display: inline-block; }
+  .nav .admin-link { display: inline-flex; padding: 0.3rem 0.7rem; font-size: 0.66rem; }
   .slider-slide .banner-titulo { font-size: clamp(2rem, 11vw, 3.5rem); }
   .banners-grid { grid-template-columns: 1fr; }
 }

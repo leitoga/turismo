@@ -1462,9 +1462,11 @@ body.page-paquetes .seccion-header {
 }
 
 @media (max-width: 560px) {
-  .nav { display: flex; gap: 0.65rem; }
-  .nav a { font-size: 0.78rem; }
-  .nav .admin-link { display: inline-flex; padding: 0.35rem 0.85rem; font-size: 0.72rem; }
+  .header { padding: 0.7rem 1rem; flex-wrap: nowrap; }
+  .logo img { height: 32px; }
+  .nav { display: flex; gap: 0.5rem; flex-wrap: nowrap; }
+  .nav a { font-size: 0.72rem; padding: 0; white-space: nowrap; }
+  .nav .admin-link { display: inline-flex; padding: 0.3rem 0.7rem; font-size: 0.66rem; }
   .cl-trust-inner { grid-template-columns: 1fr; }
   .cl-trust-item { border-right: none; padding-right: 0; }
   .collage-stage { min-height: 380px; }

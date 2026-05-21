@@ -73,7 +73,6 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--w-border);
-  padding: 1rem 3rem;
 }
 
 .logo { display: flex; align-items: center; text-decoration: none; }
@@ -1335,9 +1334,11 @@ body.page-paquetes .seccion-header {
 }
 
 @media (max-width: 560px) {
-  .nav { display: flex; gap: 0.65rem; }
-  .nav a { font-size: 0.78rem; }
-  .nav .admin-link { display: inline-flex; padding: 0.35rem 0.85rem; font-size: 0.72rem; }
+  .header { padding: 0.7rem 1rem; flex-wrap: nowrap; }
+  .logo img { height: 32px; }
+  .nav { display: flex; gap: 0.5rem; flex-wrap: nowrap; }
+  .nav a { font-size: 0.72rem; padding: 0; white-space: nowrap; }
+  .nav .admin-link { display: inline-flex; padding: 0.3rem 0.7rem; font-size: 0.66rem; }
   .orbital-card.pos-1, .orbital-card.pos-4 { width: 160px; height: 110px; }
   .orbital-card.pos-2, .orbital-card.pos-3 { width: 150px; height: 105px; }
   .orbital-center { width: 130px; height: 130px; padding: 0 0.5rem; }
